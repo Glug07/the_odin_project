@@ -128,3 +128,91 @@ function leapYears(year) {
         return (true);
     return (false);
 }
+
+const grid = document.querySelector("#container");
+let gridRows = document.getElementsByClassName("rowsGrid");
+let gridCols = document.getElementsByClassName("cell");
+
+function gridCreation(rows, cols) { //call createRows and createCols with good values
+    createRows(rows);
+    createCols(cols);
+}
+
+function createRows(rows) { // init rows
+    for (let r = 0; r < rows; r++) {
+        const cell = document.createElement("div");
+        cell.className = "rowsGrid";
+        grid.appendChild(cell);
+    }
+}
+
+function createCols(cols) { // init all cells
+    for (let c = 0; c < gridRows.length; c++) {
+        for (let r = 0; r < cols; r++) {
+            const cell = document.createElement("div");
+            cell.className = "cell";
+            gridRows[c].appendChild(cell);
+        }
+    }
+}
+
+function add(...operands) {
+	const result = operands.reduce((sum, operand) => {
+		return (sum + operand);
+	});
+	return (result);
+}
+
+function subtract(...operands) {
+	const result = operands.reduce((substract, operand) => {
+		return (substract - operand);
+	});
+	return (result);
+}
+
+function sum(operandsArray) {
+	const result = operandsArray.reduce((sum, operand) => {
+		return (sum + operand);
+	}, 0);
+	return (result);
+}
+
+function multiply(operandsArray) {
+	const result = operandsArray.reduce((sumProduct, operand) => {
+		return (sumProduct * operand);
+	});
+	return (result);
+}
+
+function power(operand, powerValue) {
+	return (operand ** powerValue);
+}
+
+function factorial(factorialValue) {
+	let factorialResult = 1;
+
+	while (factorialValue) {
+		factorialResult *= factorialValue;
+		factorialValue--;
+	}
+	return (factorialResult);
+}
+
+function reverseString(str) { //IMPORTANT
+    let stringArray = str.split("");
+    let reverseArray = stringArray.reverse();
+    let reverseString = reverseArray.join("");
+
+    return (reverseString);
+}
+
+function palindromes (str) {
+    let sanitizedStr = str.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~() ]/g, "");
+    let reverseStr = reverseString(sanitizedStr);
+    for (let s = 0; s < sanitizedStr.length; s++) {
+        if (sanitizedStr[s] !== reverseStr[s]) {
+            return (false);
+        }
+    }
+    return (true);
+}

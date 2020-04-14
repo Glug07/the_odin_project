@@ -1,0 +1,31 @@
+.cell {
+    border: 3px solid black;
+}
+
+html {
+    text-align: center;
+}
+
+body {
+    display: inline-block;
+    max-height: 1010px;
+    max-width: 960px;
+    min-height: 1010px;
+    min-width: 960px;
+}
+
+#container {
+    width: 100%;
+    height: 95%;
+    display: grid;
+}
+
+.rowsGrid {
+    display: grid;
+}
+
+button {
+    margin-top: 10px;
+    height: 30px;
+    width: 100px;
+}

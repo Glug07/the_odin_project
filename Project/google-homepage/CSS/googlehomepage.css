@@ -1,0 +1,88 @@
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+body {
+    height: 100vh;
+}
+
+.navbar-div {
+    font-family: arial;
+    font-size: small;
+    margin: 2.8vh 0.6vw 2.8vh 0.6vw;
+}
+
+.navbar-menu {
+    top: -3px;
+    height: 2vh;
+    width: 1vw;
+    position: relative;
+    background-color: black !important;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.search-item {
+    border-radius: 3px;
+}
+
+.search-form {
+    display: flex;
+    height: 30%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+#main-content {
+    height: 86%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-link-button {
+    background-color: #4285f4;
+    color: white;
+    padding: 7px;
+    border-radius: 3px;
+    font-weight: bold;
+    
+}
+
+.search-input {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.footer {
+    border: 1px solid grey;
+    background-color: lightgrey;
+    height: 6.2%;
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.footer-group {
+    font-size: 19px;
+    margin-right: 0.5vw;
+    margin-left: 1vw;
+}
+
+.footer-link {
+    color: rgba(71, 71, 71, 1);
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
