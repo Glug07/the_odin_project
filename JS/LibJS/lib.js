@@ -216,3 +216,69 @@ function palindromes (str) {
     }
     return (true);
 }
+
+function removeOverflow(actualValue, minValue, maxValue) { //minValue and maxValue are included
+    let intervalValue = maxValue - minValue + 1; // I have to add 1 if I want the real interval
+
+    while (actualValue < minValue) { //in case of the value is small than the min extreme
+        actualValue += intervalValue;
+    }
+    while (actualValue > maxValue) { //in case of the value is bigger than the max extreme
+        actualValue -= intervalValue;
+    }
+    return (actualValue);
+}//if there is overflow it's smoothing the value for it to be in interval
+// useless modulo the interval works fine
+
+function caesar (str, cipherIndex) {
+    let finalStr = "";
+
+    if (cipherIndex < 0)
+        return caesar(str, cipherIndex + 26);
+
+    for (let s = 0; s < str.length; s++) {
+        let actualChar = str.charCodeAt(s)
+        let cipheredCharCode = actualChar + cipherIndex;
+
+        if (actualChar >= 65 && actualChar <= 90) {
+            cipheredCharCode = (cipheredCharCode - 65) % 26 + 65;
+            actualChar = String.fromCharCode(cipheredCharCode);
+        }
+        else if (actualChar >= 97 && actualChar <= 122) {
+            cipheredCharCode = (cipheredCharCode - 97) % 26 + 97;
+            actualChar = String.fromCharCode(cipheredCharCode);
+        } else {
+            actualChar = String.fromCharCode(actualChar);
+        }
+        finalStr += actualChar;
+    }
+    return (finalStr);
+}
+
+function fibonacci (fibonacciValue) { // return the n value of fibonacci suite
+    let fibonacciArray = [1, 1];
+
+    if (fibonacciValue < 0)
+        return ("OOPS");
+    for (let f = 2; f < fibonacciValue; f++) {
+        fibonacciArray[f] = fibonacciArray[f - 1] + fibonacciArray[f - 2];
+    }
+    return (fibonacciArray[fibonacciValue - 1]);
+}
+
+function getCurrentYearDate() {
+    let year = new Date();
+
+    return (year.getFullYear());
+}
+
+let findTheOldest = function (peopleObject) {
+    const ageSorted = peopleObject.sort((peopleA, peopleB) => {
+        let ageA = verifyObjectValues(peopleA);
+        let ageB = verifyObjectValues(peopleB);
+        if (ageA > ageB)
+            return (-1);
+        return (1);
+    });
+    return (ageSorted[0]);
+}

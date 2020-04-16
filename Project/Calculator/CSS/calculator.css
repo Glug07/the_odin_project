@@ -1,0 +1,78 @@
+* {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+}
+
+body {
+        background-color: hsla(0, 0%, 10%, 1);
+        width: 100vw;
+        height: 100vh;
+}
+
+#main-content {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+#div-calculator {
+        height: 50%;
+        width: 30%;
+        display: grid;
+        grid-template-columns: repeat(4, 25%);
+        grid-template-rows: repeat(7, 14.2857142857%);
+        grid-template-areas: "display display display display" "display display display display" "tools tools tools operators" "operands operands operands operators" "operands operands operands operators" "operands operands operands operators" "operands operands operands operators";
+}
+
+#div-operand {
+        grid-area: operands;
+        background-color: blue;
+        display: flex;
+        flex-flow: wrap;
+}
+
+.operands {
+        height: 25%;
+        width: 33.33333333%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+}
+
+#div-operator {
+        grid-area: operators;
+        display: flex;
+        flex-direction: column;
+}
+
+.operators {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20%;
+        width: 100%;
+        border-width: 1px;
+        border-height: 1px;
+}
+
+#div-tool {
+        grid-area: tools;
+        background-color: yellow;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+}
+
+#div-display {
+        grid-area: display;
+        background-color: green;
+}
+
+#zero {
+        width: 300%;
+        justify-self: flex-end;
+        align-self: flex-end;
+}
