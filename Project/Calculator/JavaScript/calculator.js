@@ -101,8 +101,9 @@ function subOperands(valueA, valueB) {
     return ("ERROR");
 }
 
-function roundResult(array)
-{
+function roundResult(array) {
+    if (Number.isInteger(array[0]))
+        return (array);
     array[0] = Number(array[0]).toFixed(1);
     return (array);
 }
@@ -142,8 +143,7 @@ function displayResult(result) {
     operationContent = "";
 }
 
-function displayErrorMessage()
-{
+function displayErrorMessage() {
     paraDisplayContainer[0].innerHTML = "What you're trying to do is not possible !";
     operationContent = "";
 }

@@ -156,20 +156,6 @@ function createCols(cols) { // init all cells
     }
 }
 
-function add(...operands) {
-	const result = operands.reduce((sum, operand) => {
-		return (sum + operand);
-	});
-	return (result);
-}
-
-function subtract(...operands) {
-	const result = operands.reduce((substract, operand) => {
-		return (substract - operand);
-	});
-	return (result);
-}
-
 function sum(operandsArray) {
 	const result = operandsArray.reduce((sum, operand) => {
 		return (sum + operand);
@@ -281,4 +267,66 @@ let findTheOldest = function (peopleObject) {
         return (1);
     });
     return (ageSorted[0]);
+}
+
+function deleteSpaces(string) //deletes all spaces of the "string"
+{
+    return (string.replace(/ /g, ''));
+}
+
+function transformStringToArray(string) { //transform string into array e.i 12+3+5 = ["12","+","3","+","5"]; put into the array if it's NaN or not
+    let array = [];
+    let storageString = "";
+
+    for (let s = 0; s < string.length; s++) {
+        if (isNaN(string.charAt(s))) {
+            array.push(storageString);
+            array.push(string.charAt(s));
+            storageString = "";
+        } else {
+            storageString += string.charAt(s);
+        }
+    }
+    if (storageString !== "")
+        array.push(storageString);
+    return (array);
+}
+
+function multOperands(valueA, valueB) //if valueA and valueB is not isNaN return the mult if not return -1
+{
+    if (!isNaN(valueA) && !isNaN(valueB))
+        return (valueA * valueB);
+    return (-1);
+}
+
+function divOperands(valueA, valueB) //if valueA and valueB is not isNaN return the div if not return -1
+{
+    if (!isNaN(valueA) && !isNaN(valueB))
+        return (valueA / valueB);
+    return (-1);
+}
+
+function removeSpecificElements(array, a, numberToDelete) // delete the "numbertodelete value" from array[a] element
+{
+    array.splice(a, numberToDelete);
+}
+
+function add(...operands) {
+	const result = operands.reduce((sum, operand) => {
+		return (sum + operand);
+	});
+	return (result);
+}
+
+function subtract(...operands) {
+	const result = operands.reduce((substract, operand) => {
+		return (substract - operand);
+	});
+	return (result);
+}
+
+function roundResult(value, decimalsValue)
+{
+    value = Number(value).toFixed(decimalsValue);
+    return (array);
 }
