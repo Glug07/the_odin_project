@@ -1,0 +1,99 @@
+h1 {
+    color: #1E88E5;
+    font-size: 8vh;
+    line-height: 10vh;
+}
+
+#header-id {
+    text-align: center;
+    height: 10vh;
+    width: 100vw;
+    background-color: #212121;
+    margin-top: auto;
+}
+
+body {
+    height: 90vh;
+    width: 100vw;
+}
+
+#main-content-id {
+    background-color: #E0E0E0;
+    border-top: 2.5vh solid #1E88E5;
+    border-right: 2vw solid #1E88E5;
+    border-bottom: 2.5vh solid #1E88E5;
+    border-left: 2vw solid #1E88E5;
+    height: 85vh;
+    width: 96vw;
+}
+
+#game-content-div {
+    height: 100%;
+    width: 100%;
+}
+
+#score-board-general-id {
+    height: 25%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 0.5vh solid black;
+}
+
+.score-board {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#game-board-id {
+    height: 75%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-name {
+    font-size: 4vh;
+}
+
+.player-score {
+    font-size: 5vh;
+}
+
+.player-symbol {
+    font-size: 6vh;
+}
+
+#tic-tac-toe-board-id {
+    display: grid;
+    height: 80%;
+    width: 30%;
+    max-height: 80%;
+
+}
+
+.rowsGrid {
+    display: grid;
+}
+
+.cell {
+    border-radius: 5px;
+    border-top: 2px;
+    border-right: 2px;
+    border-bottom: 2px;
+    border-left: 2px;
+    border-style: solid;
+    border-color: blue;
+}
+
+.img {
+    max-height: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    height: auto;
+}

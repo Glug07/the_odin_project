@@ -330,3 +330,91 @@ function roundResult(value, decimalsValue)
     value = Number(value).toFixed(decimalsValue);
     return (array);
 }
+
+function _createArray(length) { //create one or two dimensions array, but I think it's infinite you can create third dimensions array
+    let arr = new Array(length || 0), i = length;
+
+    if (arguments.length > 1) {
+        let args = Array.prototype.slice.call(arguments, 1);
+        while (i--) {
+            arr[length - 1 - i] = _createArray.apply(this, args);
+        }
+    }
+    return arr;
+}
+
+//events publish subscribe pattern
+//pubsub
+let events = {
+    events: {},
+    on: function (eventName, fn) {
+        this.events[eventName] = this.events[eventName] || [];
+        this.events[eventName].push(fn);
+    },
+    off: function(eventName, fn) {
+        if (this.events[eventName]) {
+            for (let i = 0; i < this.events[eventName].length; i += 1) {
+                if (this.events[eventName][i] === fn) {
+                    this.events[eventName].splice(i, 1);
+                    break;
+                }
+            }
+        }
+    },
+    emit: function (eventName, ...data) {
+        if (this.events[eventName]) {
+            this.events[eventName].forEach(function(fn) {
+                fn(...data);
+            })
+        }
+    }
+}
+export {events};
+
+//create array at dimension I want
+
+function _createArray(length) {
+    let arr = new Array(length || 0), i = length;
+
+    if (arguments.length > 1) {
+        let args = Array.prototype.slice.call(arguments, 1);
+
+        while (i--) {
+            arr[length - 1 - i] = _createArray.apply(this, args);
+        }
+    }
+    return arr;
+}
+
+//fill 2d array with value argument
+
+function _fillGameBoardArray(fillValue) {
+    gameBoardArray = gameBoardArray.map(element => element.fill(fillValue));
+}
+
+//find element position in node list
+
+function _findElePos(element, elementList) {
+    for (const e in elementList) {
+        if (elementList[e] === element) {
+            return (+e);
+        }
+    }
+    return (-1);
+}
+
+function createEleClass(typeName, className) { //create an element with a class
+    const cell = document.createElement(typeName);
+    cell.className = className;
+    return (cell);
+}
+
+function addStyle(element, property, propertyValue) { // add style and property to element
+    element.style[property] = propertyValue;
+}
+
+//get l'element qui a été cliqué
+element = element || window.event;
+
+let target = element.target || element.srcElement;
+let text = target.textContent || target.innerText;

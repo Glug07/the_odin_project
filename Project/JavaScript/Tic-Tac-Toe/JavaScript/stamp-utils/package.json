@@ -1,0 +1,106 @@
+{
+  "_args": [
+    [
+      "stamp-utils",
+      "/mnt/h/programmation_projects/the_odin_project/Project/JavaScript/Tic-Tac-Toe/JavaScript"
+    ]
+  ],
+  "_from": "stamp-utils@latest",
+  "_id": "stamp-utils@1.3.2",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/stamp-utils",
+  "_nodeVersion": "6.0.0",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/stamp-utils-1.3.2.tgz_1464662715471_0.43893459369428456"
+  },
+  "_npmUser": {
+    "email": "eric@ericleads.com",
+    "name": "ericelliott"
+  },
+  "_npmVersion": "3.8.6",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "stamp-utils",
+    "raw": "stamp-utils",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/stamp-utils/-/stamp-utils-1.3.2.tgz",
+  "_shasum": "2045bbc4efeb66e83be3ed7ccdf535e8d960951c",
+  "_shrinkwrap": null,
+  "_spec": "stamp-utils",
+  "_where": "/mnt/h/programmation_projects/the_odin_project/Project/JavaScript/Tic-Tac-Toe/JavaScript",
+  "author": {
+    "name": "Eric Elliott"
+  },
+  "bugs": {
+    "url": "https://github.com/stampit-org/stamp-utils/issues"
+  },
+  "dependencies": {
+    "lodash": "^4.6.1"
+  },
+  "description": "Create and compose stamps: Composable factory functions.",
+  "devDependencies": {
+    "babel-cli": "^6.6.5",
+    "babel-eslint": "^6.0.0",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-register": "^6.7.2",
+    "check-compose": "2.0.0",
+    "cross-env": "1.0.8",
+    "eslint": "^2.5.1",
+    "rimraf": "^2.4.3",
+    "tape": "^4.2.1",
+    "updtr": "0.1.15",
+    "watch": "0.18.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "2045bbc4efeb66e83be3ed7ccdf535e8d960951c",
+    "tarball": "https://registry.npmjs.org/stamp-utils/-/stamp-utils-1.3.2.tgz"
+  },
+  "gitHead": "7857861f0b1f1f86c2128b56625e13b08e5c198f",
+  "homepage": "https://github.com/stampit-org/stamp-utils#readme",
+  "keywords": [
+    "compose",
+    "composition",
+    "oo",
+    "prototypal",
+    "stamp",
+    "stamps"
+  ],
+  "license": "MIT",
+  "main": "build",
+  "maintainers": [
+    {
+      "name": "ericelliott",
+      "email": "eric@ericleads.com"
+    }
+  ],
+  "name": "stamp-utils",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/stampit-org/stamp-utils.git"
+  },
+  "scripts": {
+    "build": "babel -s -d build src",
+    "check-compose": "babel-node ./node_modules/.bin/check-compose src/compose",
+    "clean": "rimraf build && mkdir build",
+    "lint": "eslint src/",
+    "prebuild": "npm run clean",
+    "prepublish": "npm run clean && npm run lint && npm run test && npm run build",
+    "pretest": "npm run -s lint && npm run -s check-compose",
+    "test": "cross-env NODE_PATH=src tape -r babel-register src/test/index.js",
+    "update": "updtr",
+    "watch": "watch 'clear && npm -s run lint && npm run -s test' src"
+  },
+  "version": "1.3.2"
+}
