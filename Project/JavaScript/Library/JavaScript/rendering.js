@@ -38,4 +38,3 @@ const render = (function() {
 })();
 
 export { render };
-                                       
