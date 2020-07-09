@@ -1,0 +1,70 @@
+html {
+    overflow-x: hidden;
+}
+
+#header {
+    text-align: center;
+    font-size: 50px;
+    background-color: coral;
+    position: relative;
+    padding-top: 30px;
+    top: -30px;
+    left: -30px;
+    width: 110%;
+}
+
+#to-do-list {
+    margin-top: 1vh;
+    display: grid;
+    grid-template-columns: 23vw 72vw;
+    grid-gap: 4vw;
+}
+
+#project-list {
+    grid-column: 1;
+    text-align: center;
+}
+
+#project-list-title {
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    background-color: cornflowerblue;
+    font-size: 5vmin;
+
+    border-radius: 15px;
+    margin-bottom: 1vh;
+}
+
+#selected-project-tasks {
+    grid-column: 2;
+    text-align: center;
+}
+
+.project-list-cas {
+    background-color: green;
+    font-size: 3vmin;
+    border-radius: 15px;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    margin-bottom: 1vh;
+
+}
+
+#task-list-title {
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    background-color: cornflowerblue;
+    font-size: 5vmin;
+    border-radius: 15px;
+    margin-bottom: 1vh;
+}
+
+.to-do-list-cas {
+    background-color: green;
+    font-size: 3vmin;
+    border-radius: 15px;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    margin-bottom: 1vh;
+    text-align: center;
+}
