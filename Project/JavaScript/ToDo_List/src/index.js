@@ -1,3 +1,5 @@
+import * as data from './dataManaging.js';
+
 (function () {
     if (typeof (Storage) !== "undefined") {
         console.log("Supported\n");
@@ -5,7 +7,7 @@
         console.log("Not Supported\n");
     }
 
-    const project = (function(name) {
+    const project = (function (name) {
         const _name = name;
         let _taskList = [];
 
@@ -13,19 +15,28 @@
         const getTaskList = () => _taskList;
         const addTask = (task) => _taskList.push(task);
         const deleteTask = (taskPosition) => _taskList.splice(taskPosition, 1);
-        const toJSON = () => {getName(), getTask
+        const toJSONTaskList = function () {
+            let tasksString = "";
+
+            _taskList.forEach(task => {
+                tasksString += task.toJSON();
+            });
+            return (tasksString);
+        }
+        const toJSON = function () {
+            return (`name=${getName()}\n${toJSONTaskList()}`);
 
         }
-
         return {
             getName,
             getTaskList,
             addTask,
-            deleteTask
+            deleteTask,
+            toJSON
         };
     });
 
-    const task = (function(name, description, date, priority) {
+    const task = (function (name, description, date, priority) {
         let _name = name;
         let _description = description;
         let _date = date;
@@ -35,20 +46,32 @@
         const getDescription = () => _description;
         const getDate = () => _date;
         const getPriority = () => _priority;
+        const toJSON = function () {
+            return (`"name": "${getName()}", "description"="${getDescription()}", "date"="${getDate()}", "priority"="${getPriority()}"\n`);
+        }
 
         return {
             getName,
             getDescription,
             getDate,
-            getPriority
+            getPriority,
+            toJSON
         };
     });
-
-    function saveData() {
-        //const project_testing = project("project_testing");
-        
-        alert(JSON.stringify(myObject));
-        console.log(localStorage.getItem("project_testing"));
-    }
-    saveData();
+    let projectList = [];// = data.dataLoad();
+    let task1 = task("1", "2", "3", "4");
+    let project1 = project("nameproject");
+    project1.addTask(task1);
+    projectList.push(project1);
+    data.dataSave(projectList);
+    data.dataLoad();
+    window.onbeforeunload = function (event) {
+        var message = 'Important: Please click on \'Save\' button to leave this page.';
+        if (typeof event == 'undefined') {
+            event = window.event;
+        }
+        if (event) {
+            event.returnValue = message;
+        }
+    };
 })();
